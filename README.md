@@ -1,6 +1,5 @@
 #testem-multi
-Execute many testems and output one tap file.
-
+Run multiple testems, output to a single tap file.
 ##Install
 ```sh
 npm install -g testem
