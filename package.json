@@ -1,0 +1,47 @@
+{
+  "name": "testem-multi",
+  "description": "Execute testem of many test files",
+  "version": "0.0.1",
+  "homepage": "https://github.com/sideroad/testem-multi",
+  "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sideroad/testem-multi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sideroad/testem-multi/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "main": "testem-multi.js",
+  "bin": {
+    "testem-multi": "./bin/testem-multi"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "async":"~0.1.22",
+    "underscore":"~1.4.2"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "async":"~0.1.22",
+    "underscore":"~1.4.2"
+  },
+  "keywords": [
+    "testem-multi"
+  ],
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "license": "MIT"
+}

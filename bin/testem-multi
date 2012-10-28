@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+// Run testem-multi.
+require('../lib/testem-multi').exec();
