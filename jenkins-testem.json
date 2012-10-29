@@ -1,7 +1,6 @@
 {
   "browsers" : [
-    "chrome",
-    "firefox"
+    "PhantomJS"
   ],
   "files": [
     "examples/1.html",
