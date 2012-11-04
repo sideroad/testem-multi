@@ -31,7 +31,7 @@ testem-multi
 ```js
 {
   "output" : [
-    "ok": false,
+    "pass": false,
     "fail": true
   ],
   "files" : [
