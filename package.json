@@ -1,7 +1,7 @@
 {
   "name": "testem-multi",
   "description": "Run multiple testems, output to a single tap file",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "homepage": "https://github.com/sideroad/testem-multi",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
@@ -17,7 +17,7 @@
       "url": "http://opensource.org/licenses/mit-license.php"
     }
   ],
-  "main": "testem-multi.js",
+  "main": "./lib/testem-multi.js",
   "bin": {
     "testem-multi": "./bin/testem-multi"
   },

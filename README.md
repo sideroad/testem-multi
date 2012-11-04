@@ -10,7 +10,7 @@ npm install -g testem-multi
 1.Prepare testem-multi.json
 ```js
 {
-  "browsers" : [
+  "launch_in_ci" : [
     "chrome",
     "safari"
   ],
@@ -25,3 +25,19 @@ npm install -g testem-multi
 ```sh
 testem-multi
 ```
+
+##Advance
+1.Output only failed test
+```js
+{
+  "output" : [
+    "ok": false,
+    "fail": true
+  ],
+  "files" : [
+    "examples/1.html",
+    "examples/2.html"
+  ]
+}
+```
+

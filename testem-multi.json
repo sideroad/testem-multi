@@ -1,5 +1,5 @@
 {
-  "browsers" : [
+  "launch_in_ci" : [
     "chrome",
     "firefox"
   ],
