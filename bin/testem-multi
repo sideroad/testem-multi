@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 // Run testem-multi.
-require('../lib/testem-multi').exec(undefined, function(result){
+var multi = require('../lib/testem-multi');
+multi.exec();
+multi.on('exit', function(result){
   console.log(result);
 });
+
