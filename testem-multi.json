@@ -1,7 +1,6 @@
 {
   "launch_in_ci" : [
-    "chrome",
-    "firefox"
+    "PhantomJS"
   ],
   "files": [
     "examples/1.html",
