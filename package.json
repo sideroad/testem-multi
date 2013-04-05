@@ -1,7 +1,7 @@
 {
   "name": "testem-multi",
   "description": "Run multiple testems, output to a single tap file",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/sideroad/testem-multi",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
@@ -29,12 +29,14 @@
   },
   "dependencies": {
     "async":"~0.1.22",
-    "underscore":"~1.4.2"
+    "underscore":"~1.4.2",
+    "simple-spawn":"~0.0.2"
   },
   "devDependencies": {
     "mocha": "*",
     "async":"~0.1.22",
-    "underscore":"~1.4.2"
+    "underscore":"~1.4.2",
+    "simple-spawn":"~0.0.2"
   },
   "keywords": [
     "testem-multi"
