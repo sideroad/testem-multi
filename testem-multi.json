@@ -5,7 +5,8 @@
   ],
   "files": [
     "examples/1.html",
-    "examples/2.html"
+    "examples/2.html",
+    "testem.json"
   ],
   "routes": {
     "/lib": "examples/lib"

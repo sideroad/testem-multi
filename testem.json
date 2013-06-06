@@ -1,1 +1,8 @@
-{"launch_in_ci":["chrome","firefox"],"routes":{"/lib":"examples/lib"},"src_files":[],"test_page":"examples/2.html"}
+{
+  "launch_in_ci":["chrome","firefox"],
+  "routes":{
+    "/lib":"examples/lib"
+  },
+  "src_files":[],
+  "test_page":"examples/1.html"
+}
