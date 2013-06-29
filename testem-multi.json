@@ -1,16 +1,11 @@
 {
   "launch_in_ci" : [
-    "chrome",
-    "firefox"
+    "Chrome",
+    "Firefox"
   ],
   "files": [
     "examples/1.html",
     "examples/2.html",
     "testem.json"
-  ],
-  "routes": {
-    "/lib": "examples/lib"
-  },
-  "src_files": [
   ]
 }

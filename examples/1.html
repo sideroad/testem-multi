@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>QUnit Example</title>
-  <link rel="stylesheet" href="/lib/qunit.css">
+  <link rel="stylesheet" href="lib/qunit.css">
 </head>
 <body>
   <div id="qunit"></div>
-  <script src="/lib/qunit.js"></script>
+
+  <script src="lib/qunit.js"></script>
   <script src="tests.js"></script>
   <script>
-if (location.hash === '#testem')
-    document.write('<script src="/testem.js"></'+'script>')
-</script>
+  if (location.hash === '#testem')
+      document.write('<script src="/testem.js"></'+'script>')
+  </script>
 
 </body>
 </html>

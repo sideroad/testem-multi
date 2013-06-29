@@ -1,7 +1,7 @@
 {
   "name": "testem-multi",
   "description": "Run multiple testems, output to a single tap file",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "homepage": "https://github.com/sideroad/testem-multi",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
