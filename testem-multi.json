@@ -4,8 +4,8 @@
     "Firefox"
   ],
   "files": [
-    "examples/1.html",
-    "examples/2.html",
+    "examples/one.html",
+    "examples/two.html",
     "testem.json"
   ]
 }

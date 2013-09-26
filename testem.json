@@ -1,1 +1,1 @@
-{"launch_in_ci":["PhantomJS"],"test_page":"examples/1.html"}
+{"launch_in_ci":["PhantomJS"],"test_page":"examples/one.html#testem"}

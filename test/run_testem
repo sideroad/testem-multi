@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var spawn = require("child_process").spawn;
+
+var multi = spawn("node", ["./bin/testem-multi", "testem-multi.json"], {
+	stdio: 'pipe'
+});
+
+var out = "";
+multi.stdout.on("data", function (data) {
+	out += data.toString();
+	// Apparently this console.log drains the buffer, if I remove it the test fails :)
+	console.log("");
+});
+
+multi.on("exit", function (code, signal) {
+	// Since two tests fail, I expect exit code != 0
+	if (code == 0) {
+		console.error("Expecting error code 0, got", code);
+		process.exit(1);
+	} else if (!matchExpectedOutput(out)) {
+		console.error("Expecting 4 tests and 2 failures, got", out);
+		process.exit(2);
+	}
+});
+
+function matchExpectedOutput (out) {
+	return out.indexOf("# tests 20") !== -1 &&
+		out.indexOf("# pass 10") !== -1 &&
+		out.indexOf("# fail 10") !== -1;
+}
