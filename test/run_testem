@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+console.log("Running test testem");
 
 var spawn = require("child_process").spawn;
 
@@ -9,14 +10,21 @@ var multi = spawn("node", ["./bin/testem-multi", "testem-multi.json"], {
 var out = "";
 multi.stdout.on("data", function (data) {
 	out += data.toString();
-	// Apparently this console.log drains the buffer, if I remove it the test fails :)
-	console.log("");
+});
+var err = "";
+multi.stderr.on("data", function (data) {
+	err += data.toString();
 });
 
 multi.on("exit", function (code, signal) {
+	if (err) {
+		console.error("Got standard error output:\n", err);
+		process.exit(-1);
+	}
+
 	// Since two tests fail, I expect exit code != 0
 	if (code == 0) {
-		console.error("Expecting error code 0, got", code);
+		console.error("Expecting error code !=0, got", code);
 		process.exit(1);
 	} else if (!matchExpectedOutput(out)) {
 		console.error("Expecting 4 tests and 2 failures, got", out);
