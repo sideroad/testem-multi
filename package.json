@@ -1,7 +1,7 @@
 {
   "name": "testem-multi",
   "description": "Run multiple testems, output to a single tap file",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "homepage": "https://github.com/sideroad/testem-multi",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
@@ -22,15 +22,15 @@
     "testem-multi": "./bin/testem-multi"
   },
   "engines": {
-    "node": "*"
+    "node": ">=0.10"
   },
   "scripts": {
-    "test": "node test/run_testem"
+    "test": "node test/run_testem && node test/event_emitter"
   },
   "dependencies": {
     "async":"~0.1.22",
     "underscore":"~1.4.2",
-    "testem":">=0.5.2"
+    "testem":"git+https://github.com/piuccio/testem.git#handle_error"
   },
   "keywords": [
     "testem-multi", "testem"

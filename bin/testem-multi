@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
 // Run testem-multi.
-var multi = require('../lib/testem-multi');
-multi.exec();
-multi.on('exit', function(result, data) {
-  console.log(result);
-  if (data.fail > 0) {
+var multi = require("../lib/testem-multi").exec(null, process.argv[2]);
+multi.stream.pipe(process.stdout);
+multi.stream.on("end", function() {
+  if (multi.results.fail > 0) {
     exit(1);
   } else {
     exit(0);
@@ -14,6 +13,9 @@ multi.on('exit', function(result, data) {
 
 function exit (code) {
   process.nextTick(function () {
-    process.exit(code);
+    // Write one last time and wait the buffer to flush before exiting
+    process.stdout.write("", function () {
+      process.exit(code);
+    });
   });
 }
