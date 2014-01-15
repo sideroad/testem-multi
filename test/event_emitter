@@ -41,7 +41,9 @@ multi.on("exit", function (text, details) {
 function matchExpectedOutput (out) {
 	return out.indexOf("# tests 20") !== -1 &&
 		out.indexOf("# pass 10") !== -1 &&
-		out.indexOf("# fail 10") !== -1;
+		out.indexOf("# fail 10") !== -1 &&
+		out.match(/\nok /g).length === 10 &&
+		out.match(/\nnot ok /g).length === 10;
 }
 
 function matchExpectedDetails (details) {
