@@ -1,7 +1,7 @@
 {
   "name": "testem-multi",
   "description": "Run multiple testems, output to a single tap file",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "homepage": "https://github.com/sideroad/testem-multi",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
@@ -25,19 +25,25 @@
     "node": ">=0.10"
   },
   "scripts": {
-    "test": "node test/run_testem && node test/event_emitter"
+    "test": "node test/run_testem && node test/event_emitter && node test/coverage"
   },
   "dependencies": {
-    "async":"~0.1.22",
-    "underscore":"~1.4.2",
-    "testem":"git+https://github.com/piuccio/testem.git#handle_error"
+    "async": "~0.1.22",
+    "underscore": "~1.4.2",
+    "testem": "git+https://github.com/piuccio/testem.git#middlewares",
+    "ua-parser": "~0.3.3",
+    "mkdirp": "~0.3.5"
   },
   "keywords": [
-    "testem-multi", "testem"
+    "testem-multi",
+    "testem"
   ],
   "directories": {
     "example": "examples",
     "test": "test"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "~2.2.6"
+  }
 }

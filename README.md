@@ -2,7 +2,6 @@
 Run multiple testems, output to a single tap file.
 ##Install
 ```sh
-npm install -g testem
 npm install -g testem-multi
 ```
 
@@ -26,8 +25,13 @@ npm install -g testem-multi
 testem-multi
 ```
 
+Or use a different file name
+```sh
+testem-multi another_testem_multi.json
+```
+
 ##Advance
-1.Output only failed test
+1. Output only failed test
 ```js
 {
   "output" : [
@@ -41,3 +45,21 @@ testem-multi
 }
 ```
 
+2. Output code coverage information (`istanbul`)
+
+```js
+{
+  "output" : [
+    "coverage": "tmp/coverage"
+  ],
+  "files" : [
+    "examples/1.html",
+    "examples/2.html"
+  ],
+  "routes": {
+    "/src": "instumented"
+  }
+}
+```
+
+To use code coverage, the code must be instrumented before running testem-multi
