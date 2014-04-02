@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+var rimraf = require("rimraf");
+var fs = require("fs");
+var path = require("path");
+var assert = require("assert");
+
+console.log("Running test coverage");
+
+var coverageFolder = path.join(__dirname, "../tmp/coverage");
+rimraf.sync(path.join(__dirname, "../tmp"));
+
+var multi = require("../lib/testem-multi");
+multi.exec({
+	files: ["examples/coverage/istanbul.html"],
+	launch_in_ci: ["Chrome", "IE", "Firefox", "PhantomJS"],
+	output: {
+		coverage: coverageFolder
+	}
+}, "./testem-multi.json");
+
+multi.on("exit", function (text, details) {
+	var originalFiles = fs.readdirSync(coverageFolder);
+	var files = originalFiles.map(function (file) {
+		// remove the timestamp
+		var tokens = path.basename(file, ".json").split("_");
+		tokens.pop();
+		return tokens.join("_") + ".json";
+	});
+
+	try {
+		assert.deepEqual(files.sort(), [
+			"cov_Chrome.json",
+			"cov_IE.json",
+			"cov_Firefox.json",
+			"cov_PhantomJS.json"
+		].sort());
+
+		originalFiles.forEach(function (file) {
+			var content = JSON.parse(fs.readFileSync(path.join(coverageFolder, file)));
+			assert.deepEqual(content, {
+				lines: 12
+			});
+		});
+	} catch (ex) {
+		console.error(ex);
+		process.exit(1);
+	}
+
+	process.exit(0);
+});
