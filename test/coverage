@@ -29,10 +29,10 @@ multi.on("exit", function (text, details) {
 
 	try {
 		assert.deepEqual(files.sort(), [
-			"cov_Chrome.json",
-			"cov_IE.json",
-			"cov_Firefox.json",
-			"cov_PhantomJS.json"
+			"coverage_Chrome.json",
+			"coverage_IE.json",
+			"coverage_Firefox.json",
+			"coverage_PhantomJS.json"
 		].sort());
 
 		originalFiles.forEach(function (file) {
