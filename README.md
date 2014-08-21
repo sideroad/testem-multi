@@ -63,3 +63,16 @@ testem-multi another_testem_multi.json
 ```
 
 To use code coverage, the code must be instrumented before running testem-multi
+
+
+3. Stop running tests when there's a failure
+
+```js
+{
+  "bailOut" : true,
+  "files" : [
+    "examples/1.html",
+    "examples/2.html"
+  ]
+}
+```
