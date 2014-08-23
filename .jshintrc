@@ -1,0 +1,22 @@
+{
+    "expr": true,
+    "eqeqeq": false,
+    "forin" : false,
+    "loopfunc" : true,
+    "immed": false,
+    "latedef": false,
+    "newcap": false,
+    "noarg": false,
+    "sub": false,
+    "boss": true,
+    "eqnull": true,
+    "funcscope": false,
+    "indent": 4,
+    "unused": true,
+    "smarttabs": true,
+    "undef": true,
+    "plusplus": false,
+    "jquery": false,
+    "browser": false,
+    "node": true
+}
